@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Produto</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<h2 class="menu1">Menu de navegação</h2>
+<fieldset>
+<nav>
+            <a class="botao1" href="/">Início</a>
+            <a class="botao2" href="/fornecedor">Fornecedores</a>
+            <a class="botao2" href="/produto">Produtos</a>
+</nav>
+</fieldset>
+<br>
+
+<h1>Editar Produto #{{ id_produto }}</h1>
+
+<form action="/produto/atualizar/{{ id_produto }}" method="POST">
+
+    <label>Nome do produto</label>
+    <input type="text" name="nome_produto" maxlength="100" value="{{ produto[0] }}" required>
+
+    <label>Categoria do produto</label>
+    <input type="text" name="categoria_produto" maxlength="100" value="{{ produto[1] }}" required>
+
+    <label>Quantidade do produto</label>
+    <input type="number" name="quantidade_produto"  value="{{ produto[2] }}" required>
+
+    <label>Preço do produto</label>
+    <input type="text" name="preco_produto"  value="{{ produto[3] }}" required>
+
+    <button type="submit">Salvar alterações</button>
+
+</form>
+
+<a href="/">Voltar para lista de produtos</a>
+
+</body>
+</html>

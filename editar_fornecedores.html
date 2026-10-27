@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar fornecedor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>Editar Fornecedor #{{ fornecedor[0] }}</h1>
+
+<form action="/fornecedores/atualizar/{{ fornecedor[0] }}" method="POST">
+
+    <label>Nome</label>
+    <input type="text" name="nome_fornecedor"
+           value="{{ fornecedor[1] }}" required>
+
+    <label>Cidade</label>
+    <input type="text" name="cidade_fornecedor"
+           value="{{ fornecedor[2] }}" required>
+
+    <label>Prazo</label>
+    <input type="number" name="prazo_dias"
+           value="{{ fornecedor[3] }}" required>
+
+    <label>Data</label>
+    <input type="date" name="data_cadastro"
+           value="{{ fornecedor[4] }}" required>
+
+    <button type="submit">Salvar alterações</button>
+    <a href="/">Cancelar</a>
+
+</form>
+
+
+</body>
+</html>
