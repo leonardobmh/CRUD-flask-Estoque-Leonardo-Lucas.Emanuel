@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Fornecedores</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<h2 class="menu1">Menu de navegação</h2>
+<fieldset>
+<nav>
+            <a class="botao1" href="/">Início</a>
+            <a class="botao2" href="/fornecedor">Fornecedores</a>
+            <a class="botao2" href="/produto">Produtos</a>
+</nav>
+</fieldset>
+<br>
+
+<h1>Gerenciador de estoque - Fornecedores</h1>
+
+<form action="/fornecedores/enviar" method="POST">
+
+    <label>Nome</label>
+    <input type="text" name="nome_fornecedor" maxlength="100" required>
+
+    <label>Cidade</label>
+    <input type="text" name="cidade_fornecedor" required>
+
+    <label>Prazo Em Dias</label>
+    <input type="number" name="prazo_dias" required>
+
+    <label>Data</label>
+    <input type="date" name="data_cadastro" required>
+
+    <button type="submit">Adicionar fornecedor</button>
+
+</form>
+
+<table>
+    <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Cidade</th>
+        <th>Prazo (dias)</th>
+        <th>Data</th>
+        <th>Ações</th>
+    </tr>
+
+    {% for fornecedor in fornecedores %}
+    <tr>
+        <td>{{ fornecedor[0] }}</td>
+        <td>{{ fornecedor[1] }}</td>
+        <td>{{ fornecedor[2] }}</td>
+        <td>{{ fornecedor[3] }}</td>
+        <td>{{ fornecedor[4] }}</td>
+
+        <td class="acoes">
+            <a class="botao editar"
+               href="/fornecedores/editar/{{ fornecedor[0] }}">
+               Editar
+            </a>
+
+            <form action="/fornecedores/excluir/{{ fornecedor[0] }}" method="POST">
+                <button type="submit">Excluir</button>
+            </form>
+        </td>
+    </tr>
+
+    {% else %}
+    <tr>
+        <td colspan="6">Nenhum fornecedor cadastrado.</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+
+</body>
+</html>
