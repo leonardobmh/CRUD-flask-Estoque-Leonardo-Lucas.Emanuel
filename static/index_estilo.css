@@ -1,0 +1,49 @@
+body{
+    background-color: #eafafa;
+}
+
+
+.titulo1{
+    text-align: center;
+    background-color: powderblue;
+}
+
+button,
+.botao4{
+    background: #f322aa;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 4px;
+
+}
+
+button,
+.botao5{
+    background: #f322aa;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 4px;
+
+}
+
+button,
+.botao6{
+    background: #f322aa;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 4px;
+
+}
+
